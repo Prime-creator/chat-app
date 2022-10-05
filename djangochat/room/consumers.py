@@ -22,9 +22,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         )
     
     async def receive(self, text_data=None, bytes_data=None):
-        print('text_data {}'.format(text_data))
         data = json.loads(text_data)
-        print('json text_data {}'.format(data))
         message = data['message']
         username = data['username']
         room = data['room']
